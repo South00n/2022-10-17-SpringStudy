@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.mapper.emp-mapper">
+  <!-- 
+           resultType
+           while(rs.next())
+		   {
+			   FoodVO vo=new FoodVO();
+			   vo.setFno(rs.getInt(1));
+			   vo.setName(rs.getString(2));
+			   String poster=rs.getString(3);
+			   poster=poster.substring(0,poster.indexOf("^"));
+			   poster=poster.replace("#", "&");
+			   vo.setPoster(poster);
+			   
+			   list.add(vo);
+		   }
+		   
+		   parameterType
+		    ps.setString(1, ss);
+		    ps.setInt(2, start);
+		    ps.setInt(3, end);
+		    
+		    DB : JOIN/SUBQUERY/PROCEDURE/FUNCTION/TRIGGER
+		    
+		    <select id="empFindData" resultType="com.sist.dao.EmpVO" parameterType="hashmap">
+			    SELECT empno,ename,job,TO_CHAR(hiredate,'YYYY/MM/DD') as dbday,sal
+			    FROM emp 
+			    <trim prefix="WHERE ename IN(" suffix=")" suffixOverrides=")">
+			     <foreach collection="names" item="ename" close=")" separator=",">#{ename}</foreach>
+			    </trim>
+			  </select>
+   -->
+  <select id="empListData" resultType="EmpVO">
+    SELECT empno,ename,job,hiredate as regdate,sal,deptno,
+           (SELECT dname FROM dept WHERE deptno=emp.deptno) as dname,
+           (SELECT loc FROM dept WHERE deptno=emp.deptno) as loc,
+           RANK() OVER(ORDER BY sal DESC) as rank
+    FROM emp
+  </select>
+</mapper>
+
+
+
+
+
+
+
+
+
