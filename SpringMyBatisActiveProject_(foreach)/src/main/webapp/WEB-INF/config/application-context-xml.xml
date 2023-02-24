@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:p="http://www.springframework.org/schema/p"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+   <!-- 사용자 정의 클래스 등록 : 스프링은 등록된 클래스만 관리 
+        기능이 있는 클래스 : ~VO(데이터형), 인터페이스 (제외)
+        데이터베이스 처리 => 생성 ~ 소멸 ~DAO, ~Service
+        브라우저 전송(요청) ~Controller : @Controller, @RestController(ajax,vue,react,kotlin)
+        Open API (Jsoup,Naver) ~Manager : @Component (추천, 실시간)
+        => 클래스 메모리 할당을 하는 어노테이션 : @Component
+                                               |
+                                     ============================
+                                     |
+                                   @Repository, @Service, @Controller, @RestConroller
+   -->
+   <context:component-scan base-package="com.sist.*"/>
+   <!-- 스프링 MVC
+        web.xml = DispatcherServlet
+                  HandlerMapping : 클래스 찾기
+                  ViewResolver : 사용자가 등록 = JSP를 찾아서 Model을 전송
+    -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+       p:prefix="/"
+       p:suffix=".jsp"
+    />
+    <!-- 
+         Validation : 유효성 검사
+         @Notnull
+         private String name;
+         @Notnull
+         @Size(max=10,min=1,msg="")
+         private String pwd;
+     
+     -->
+</beans>
