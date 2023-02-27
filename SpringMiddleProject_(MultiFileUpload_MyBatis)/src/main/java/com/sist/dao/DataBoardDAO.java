@@ -100,4 +100,13 @@ public class DataBoardDAO {
 	public void databoardUpdate(DataBoardVO vo) {
 		mapper.databoardUpdate(vo);
 	}
+	
+	public int FindCount(Map map) {
+		return mapper.FindCount(map);
+	}
+	
+	public List<DataBoardVO> databoardFindData(Map map) {
+		return mapper.databoardFindData(map);
+	}
+
 }
