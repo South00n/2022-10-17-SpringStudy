@@ -57,6 +57,7 @@ public class JejuRestController {
 		   obj.put("score", vo.getScore());
 		   obj.put("poster", vo.getPoster());
 		   obj.put("tel", vo.getTel());
+		   obj.put("type", vo.getType());
 		   obj.put("parking", vo.getParking());
 		   obj.put("addr",vo.getAddr());
 		   obj.put("addr2",vo.getAddr2());
