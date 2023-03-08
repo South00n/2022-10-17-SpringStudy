@@ -15,7 +15,7 @@ import com.sist.vo.*;
 import com.sist.dao.*;
 
 @Controller
-public class FoodController {
+public class FoodFController {
 	@Autowired
 	private FoodDAO dao;
 	
@@ -40,6 +40,11 @@ public class FoodController {
 	public String food_detail(int fno, Model model) {
 		model.addAttribute("fno", fno);
 		return "food/food_detail";
+	}
+	
+	@GetMapping("food/food_find.do")
+	public String food_find() {
+		return "food/food_find";
 	}
 	
 }
