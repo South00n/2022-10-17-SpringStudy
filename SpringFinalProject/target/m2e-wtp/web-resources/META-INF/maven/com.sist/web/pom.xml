@@ -21,27 +21,27 @@
 		</repository>
 	</repositories>
 	<dependencies>
-	<dependency>
-	    <groupId>org.lazyluke</groupId>
-	    <artifactId>log4jdbc-remix</artifactId>
-	    <version>0.2.7</version>
-	</dependency>
-	<dependency>
-	    <groupId>com.oracle.database.jdbc</groupId>
-	    <artifactId>ojdbc8</artifactId>
-	    <version>18.15.0.0</version>
-	</dependency>
-	
-	
+	    <dependency>
+		    <groupId>org.lazyluke</groupId>
+		    <artifactId>log4jdbc-remix</artifactId>
+		    <version>0.2.7</version>
+		</dependency>
+	    
 	    <!-- ojdbc(Maven에서 사용이 안된다)-->
 	    <!-- 시스템 경로 줄때 사용  -->
-	     <!--<dependency>
+	    <!-- <dependency>
 		    <groupId>com.oracle</groupId>
 		    <artifactId>ojdbc8</artifactId>
 		    <version>8.0</version>
 		    <scope>system</scope>
 		    <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/ojdbc8.jar</systemPath>
 		</dependency> -->
+		<dependency>
+		    <groupId>com.oracle.database.jdbc</groupId>
+		    <artifactId>ojdbc8</artifactId>
+		    <version>18.15.0.0</version>
+		</dependency>
+		
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -479,7 +479,7 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
-		</dependency>
+		</dependency>  
 		<!-- security -->
 	    <dependency>
 		    <groupId>org.springframework.security</groupId>
@@ -500,15 +500,13 @@
 		    <groupId>org.springframework.security</groupId>
 		    <artifactId>spring-security-taglibs</artifactId>
 		    <version>5.1.5.RELEASE</version>
-		</dependency>  
-		
+		</dependency>    
 		<dependency>
 		    <groupId>javax.websocket</groupId>
 		    <artifactId>javax.websocket-api</artifactId>
 		    <version>1.1</version>
 		    <scope>provided</scope>
 		</dependency>  
-		   
 	</dependencies>
 
     <build>
@@ -540,6 +538,11 @@
                     <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
+            <!-- xml에서 오류 발생시 추가 -->
+            <plugin>
+			  <artifactId>maven-war-plugin</artifactId>
+			  <version>3.2.2</version>
+			</plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
