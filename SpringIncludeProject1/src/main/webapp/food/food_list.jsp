@@ -30,10 +30,10 @@ h1 {
 							<table class="table">
 								<tr>
 									<td width=30% class="text-center" rowspan="4">
-										<a href = "../food/detail.do?fno=${fvo.fno }"><img src="${fvo.poster }" style="width:100%"></a>
+										<a href = "../food/detail.do?fno=${fvo.fno }&type=1"><img src="${fvo.poster }" style="width:100%"></a>
 									</td>
 									<td width=70%>
-										<a href = "../food/detail.do?fno=${fvo.fno }"><h3>${fvo.name }</a>&nbsp;<span style="color:orange">${fvo.score }</span></h3>
+										<a href = "../food/detail.do?fno=${fvo.fno }&type=1"><h3>${fvo.name }</a>&nbsp;<span style="color:orange">${fvo.score }</span></h3>
 									</td>
 								</tr>
 								<tr>

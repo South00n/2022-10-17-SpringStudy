@@ -11,7 +11,7 @@
   <c:forEach var="vo" items="${sList }">
       <div class="col-md-3">
 	    <div class="thumbnail">
-	      <a href="../jeju/food_detail.do?no=${vo.no }">
+	      <a href="../jeju/food_detail.do?fno=${vo.no }&type=2">
 	        <img src="${vo.poster }" style="width:300px; height: 220px">
 	        <div class="caption">
 	          <p style="font-size:8px">${vo.title }</p>
@@ -20,6 +20,7 @@
 	    </div>
 	  </div>
   </c:forEach>
+  
   <div style="height: 10px"></div>
   <div class="text-center">
     <ul class="pagination">

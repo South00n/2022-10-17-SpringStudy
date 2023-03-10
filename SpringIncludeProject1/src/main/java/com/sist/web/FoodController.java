@@ -13,6 +13,9 @@ import com.sist.vo.*;
 public class FoodController {
 	@Autowired
 	private FoodDAO dao;
+	@Autowired
+	private ReplyDAO rdao;
+	//private ReplyOrmDAO rdao;
 	
 	//include / forward => request를 공유
 	@GetMapping("food/food_list.do")
@@ -38,7 +41,7 @@ public class FoodController {
 	
 	//food/detail.do?fno=${fvo.fno }
 	@GetMapping("food/detail.do")
-	public String food_detail(int fno, Model model) {
+	public String food_detail(int fno, int type, Model model) {
 		// DAO 연동
 		FoodVO vo = dao.foodDetailData(fno);
 		String[] addrs = vo.getAddress().split(" ");
@@ -46,6 +49,14 @@ public class FoodController {
 		model.addAttribute("addr", addrs[1].trim());
 		model.addAttribute("vo", vo);
 		model.addAttribute("main_jsp", "../food/detail.jsp");
+		// 댓글 읽기
+		//Map map = new HashMap();
+		//map.put("pRno", fno);
+		//map.put("pType", type);
+		List<ReplyVO> rList = rdao.replyListData(fno, type);
+		// => type(1:맛집, 2:제주, 3
+		//List<ReplyVO> rList = rdao.replyListData(map);
+		model.addAttribute("rList", rList);
 		return "main/main";
 	}
 }
