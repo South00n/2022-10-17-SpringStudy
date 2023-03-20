@@ -51,7 +51,7 @@
 	  },
 	  mounted:function(){
 		  let _this=this
-		  axios.get("http://localhost:8080/web/board/detail_vue.do",{
+		  axios.get("http://localhost/web/board/detail_vue.do",{
 			  params:{
 				  no:this.no
 			  }

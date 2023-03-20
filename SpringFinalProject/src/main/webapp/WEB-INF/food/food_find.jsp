@@ -94,7 +94,7 @@
 		  // 사용자 정의
 		  getData:function(){
 			  let _this=this;
-			  axios.get("http://localhost:8080/web/food/food_find_vue.do",{
+			  axios.get("http://localhost/web/food/food_find_vue.do",{
 				  params:{ 
 					  // 매개변수명이랑 일치시켜야해
 					  page:this.curpage,

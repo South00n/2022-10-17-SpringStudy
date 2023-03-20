@@ -62,7 +62,7 @@
 	  methods:{
 		  send:function(){
 			  let _this=this
-			  axios.get("http://localhost:8080/web/board/list_vue.do",{
+			  axios.get("http://localhost/web/board/list_vue.do",{
 				  params:{
 					  page:this.curpage
 				  }

@@ -62,7 +62,7 @@
     	},
     	mounted:function(){
     		let _this = this;
-    		axios.get("http://localhost:8080/web/news/find_vue.do",{
+    		axios.get("http://localhost/web/news/find_vue.do",{
     			params:{
     				ss:this.ss
     			}
@@ -74,7 +74,7 @@
     	methods:{
     		find:function() {
     			let _this = this;
-        		axios.get("http://localhost:8080/web/news/find_vue.do",{
+        		axios.get("http://localhost/web/news/find_vue.do",{
         			params:{
         				ss:this.ss
         			}

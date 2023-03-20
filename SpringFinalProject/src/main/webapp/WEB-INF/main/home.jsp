@@ -129,11 +129,11 @@
 	  },
 	  mounted:function(){
 		  let _this=this;
-		  axios.get("http://localhost:8080/web/food/food_main_vue.do").then(function(response){
+		  axios.get("http://localhost/web/food/food_main_vue.do").then(function(response){
 			  console.log(response.data)
 			  _this.cate_list=response.data
 		  })
-		  axios.get("http://localhost:8080/web/food/cookie_data_vue.do").then(function(response){
+		  axios.get("http://localhost/web/food/cookie_data_vue.do").then(function(response){
 			  _this.cookie_list=response.data
 		  })
 		  

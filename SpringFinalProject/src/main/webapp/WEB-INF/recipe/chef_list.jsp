@@ -91,7 +91,7 @@
     	  eventBus.$on('showChefEvent', function(value){
     		  _this.chef_name=value;
     		  
-    		  axios.get("http://localhost:8080/web/recipe/chef_make_vue.do",{
+    		  axios.get("http://localhost/web/recipe/chef_make_vue.do",{
     			  params:{
     			 	 chef:_this.chef_name
     			  }
@@ -104,7 +104,7 @@
       methods:{
          pageChange:function(){
             let _this=this;
-            axios.get("http://localhost:8080/web/recipe/chef_list_vue.do",{
+            axios.get("http://localhost/web/recipe/chef_list_vue.do",{
                params:{
                      page:_this.curpage
                }

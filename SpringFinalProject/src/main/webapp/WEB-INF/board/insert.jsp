@@ -50,7 +50,7 @@ new Vue({
 	methods:{
 		write:function(){
 			let _this = this;
-			axios.get('http://localhost:8080/web/board/insert_vue.do',{
+			axios.get('http://localhost/web/board/insert_vue.do',{
 				params:{
 					name:this.name,
 					subject:this.subject,

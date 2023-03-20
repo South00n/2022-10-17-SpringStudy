@@ -58,7 +58,7 @@ new Vue({
 	mounted:function(){
 		let _this = this
 		// 카테고리 정보를 받는다
-		axios.get("http://localhost:8080/web/food/category_info_vue.do",{
+		axios.get("http://localhost/web/food/category_info_vue.do",{
 			params:{
 				cno:_this.cno
 			}
@@ -67,7 +67,7 @@ new Vue({
 			_this.cate_info = response.data 
 		})
 		// 카테고리별 맛집 받기
-		axios.get("http://localhost:8080/web/food/food_list_vue.do",{
+		axios.get("http://localhost/web/food/food_list_vue.do",{
 			params:{
 				cno:_this.cno
 			}

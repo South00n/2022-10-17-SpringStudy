@@ -70,7 +70,7 @@ public class NaverNewsManager {
         //System.out.println(responseBody);
         return responseBody;
 	}
-private String get(String apiUrl, Map<String, String> requestHeaders){
+	private String get(String apiUrl, Map<String, String> requestHeaders){
         HttpURLConnection con = connect(apiUrl);
         try {
             con.setRequestMethod("GET");

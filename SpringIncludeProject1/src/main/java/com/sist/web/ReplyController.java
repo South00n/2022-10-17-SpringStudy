@@ -14,7 +14,7 @@ import com.sist.dao.*;
 import com.sist.vo.*;
 @Controller
 public class ReplyController {
-	private String[] url = {"", "../food/detail.do", "../jeju/food_detail.do"};
+   private String[] url = {"", "../food/detail.do", "../jeju/food_detail.do"};
    @Autowired
    private ReplyDAO dao;
    

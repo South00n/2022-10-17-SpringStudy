@@ -50,7 +50,7 @@ new Vue({
 	  },
 	  mounted:function(){
 			  let _this=this;
-			  axios.get('http://localhost:8080/web/board/update_vue.do',{
+			  axios.get('http://localhost/web/board/update_vue.do',{
 				  params:{
 					 no:this.no
 				  }
@@ -63,7 +63,7 @@ new Vue({
 	  methods:{
 		  update:function(){
 			  let _this=this;
-			  axios.get('http://localhost:8080/web/board/update_ok_vue.do',{
+			  axios.get('http://localhost/web/board/update_ok_vue.do',{
 				  params:{
 					 no:this.no,
 					 name:this.name,

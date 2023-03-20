@@ -31,7 +31,7 @@ let name;
 function connection() // 연결
 {
 	 // websocket => 웹에서 연결이 되게 만드는 소프트웨어 
-	 websocket=new WebSocket("ws://localhost:8080/web/site/chat/chat-ws");
+	 websocket=new WebSocket("ws://localhost/web/site/chat/chat-ws");
 	 websocket.onopen=onOpen;//callback(시스템 자동으로 호출)
 	 websocket.onclose=onClose;
 	 websocket.onmessage=onMessage;
